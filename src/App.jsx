@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import CursorEffect from './components/CursorEffect'
 import HomePage from './components/HomePage'
 import PortfolioDetailPage from './components/PortfolioDetailPage'
@@ -7,14 +7,15 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter basename="/portofolio-react">
+    <>
       <CursorEffect />
       <ScrollToHash />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/portfolio/:slug" element={<PortfolioDetailPage />} />
       </Routes>
-    </BrowserRouter>
+    </>
   )
 }
 
