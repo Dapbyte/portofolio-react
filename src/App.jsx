@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portofolio-react">
       <CursorEffect />
       <ScrollToHash />
       <Routes>
