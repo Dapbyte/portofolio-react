@@ -1,3 +1,5 @@
+const publicPath = (path) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`
+
 export const portfolioItems = [
   {
     slug: 'sar-victim-detection-yolo',
@@ -85,8 +87,18 @@ export const portfolioItems = [
           tone: 'var(--green)',
           summary:
             'Model ringan untuk eksperimen cepat dan potensi inference yang lebih responsif pada sistem robot.',
-          assetBase: '/portfolio/sar-victim-detection/yolov8s',
-          csv: '/portfolio/sar-victim-detection/yolov8s/results.csv',
+          assetBase: publicPath('/portfolio/sar-victim-detection/yolov8s'),
+          csv: publicPath('/portfolio/sar-victim-detection/yolov8s/results.csv'),
+          results: [
+            'confusion_matrix_normalized.png',
+            'F1_curve.png',
+            'labels.jpg',
+            'labels_correlogram.jpg',
+            'P_curve.png',
+            'PR_curve.png',
+            'R_curve.png',
+            'results.png',
+          ],
         },
         {
           id: 'yolov8x',
@@ -94,8 +106,19 @@ export const portfolioItems = [
           tone: 'var(--blue)',
           summary:
             'Model lebih besar untuk mengejar kapasitas representasi lebih kuat pada deteksi korban.',
-          assetBase: '/portfolio/sar-victim-detection/yolov8x',
-          csv: '/portfolio/sar-victim-detection/yolov8x/results.csv',
+          assetBase: publicPath('/portfolio/sar-victim-detection/yolov8x'),
+          csv: publicPath('/portfolio/sar-victim-detection/yolov8x/results.csv'),
+          results: [
+            'confusion_matrix.png',
+            'confusion_matrix_normalized.png',
+            'F1_curve.png',
+            'labels.jpg',
+            'labels_correlogram.jpg',
+            'P_curve.png',
+            'PR_curve.png',
+            'R_curve.png',
+            'results.png',
+          ],
         },
       ],
     },

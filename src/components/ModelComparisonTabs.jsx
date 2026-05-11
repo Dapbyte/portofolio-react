@@ -21,12 +21,12 @@ function ModelComparisonTabs({ comparison }) {
       ],
       curves: ['F1_curve.png', 'P_curve.png', 'PR_curve.png', 'R_curve.png'],
       dataset: ['labels.jpg', 'labels_correlogram.jpg'],
-      all: comparison.results,
+      all: activeModel.results,
     }
 
     const selected = resultSets[activeView] ?? resultSets.featured
-    return selected.filter((resultName) => comparison.results.includes(resultName))
-  }, [activeView, comparison.results])
+    return selected.filter((resultName) => activeModel.results.includes(resultName))
+  }, [activeView, activeModel])
 
   return (
     <div className="model-comparison">
@@ -77,7 +77,7 @@ function ModelComparisonTabs({ comparison }) {
         </div>
         <p>{activeModel.summary}</p>
         <p className="model-panel-note">
-          Menampilkan {visibleResults.length} dari {comparison.results.length} visual.
+          Menampilkan {visibleResults.length} dari {activeModel.results.length} visual.
         </p>
 
         <div className="result-grid">
